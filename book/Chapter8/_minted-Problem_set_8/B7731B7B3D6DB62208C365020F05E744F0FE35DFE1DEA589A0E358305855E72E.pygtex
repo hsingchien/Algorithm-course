@@ -1,0 +1,18 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{k}{def} \PYG{n+nf}{count\PYGZus{}sort\PYGZus{}in\PYGZus{}place}\PYG{p}{(}\PYG{n}{A}\PYG{p}{,}\PYG{n}{k}\PYG{p}{):}
+		\PYG{n}{C} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros}\PYG{p}{(}\PYG{n}{k}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{n}{dtype} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{int}\PYG{p}{)}
+		\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n}{A}\PYG{p}{:}
+			\PYG{n}{C}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{+=} \PYG{l+m+mi}{1}
+		\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{n}{k}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{):}
+			\PYG{n}{C}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{+=} \PYG{n}{C}\PYG{p}{[}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]}
+		\PYG{n}{swapped\PYGZus{}index} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{empty}\PYG{p}{([}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{],} \PYG{n}{dtype}\PYG{o}{=}\PYG{n+nb}{int}\PYG{p}{)}
+		\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{shape}\PYG{p}{(}\PYG{n}{A}\PYG{p}{)[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{):}
+			\PYG{k}{if} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n}{swapped\PYGZus{}index}\PYG{p}{:}
+				\PYG{k}{continue}
+			\PYG{k}{else}\PYG{p}{:}
+				\PYG{k}{while}\PYG{p}{(}\PYG{n}{i} \PYG{o}{!=} \PYG{n}{C}\PYG{p}{[}\PYG{n}{A}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]]} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{p}{)} \PYG{p}{:}
+					\PYG{n}{element\PYGZus{}go} \PYG{o}{=} \PYG{n}{A}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{c+c1}{\PYGZsh{} this element will go to the right spot}
+					\PYG{n}{A}\PYG{p}{[}\PYG{n}{C}\PYG{p}{[}\PYG{n}{A}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]]}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{],} \PYG{n}{A}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{=} \PYG{n}{A}\PYG{p}{[}\PYG{n}{i}\PYG{p}{],}\PYG{n}{A}\PYG{p}{[}\PYG{n}{C}\PYG{p}{[}\PYG{n}{A}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]]}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]}
+					\PYG{n}{swapped\PYGZus{}index} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{swapped\PYGZus{}index}\PYG{p}{,}\PYG{n}{C}\PYG{p}{[}\PYG{n}{element\PYGZus{}go}\PYG{p}{]}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{)}
+					\PYG{n}{C}\PYG{p}{[}\PYG{n}{element\PYGZus{}go}\PYG{p}{]} \PYG{o}{\PYGZhy{}=} \PYG{l+m+mi}{1}
+\end{Verbatim}

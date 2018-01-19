@@ -1,0 +1,19 @@
+\documentclass{article}
+\title{Exercise Chapter 8.1}
+\author{Xingjian Zhang}
+\begin{document}
+	\section*{8.1}
+	\subsection*{8.1-1}
+	The smallest depth of a leaf is 1, in the case that the sequence only has 2 elements in the right order and you only have to compare once.
+	\subsection*{8.1-2}
+	Use induction:
+	\\If
+	$$ \sum_{1}^{n}(\lg k) = \Omega(n\lg\\n)$$
+	$$\Omega(n\lg n) + \lg(n+1) > (n+1)\lg\\n$$
+	$$c(n+1)\lg\\n = (n+1)\lg\\n^c > (n+1)\lg(n+1)$$
+	for $c\geq 2$
+	\subsection*{8.1-3}
+	If m of the n! permutations are linear, then the heap consisting this m permutations will have $\lg(m)$ levels. Plug in the fractions, $1/2, 1/n, 1/2^n$ in the heap, all cannot beat the height down to linear. 
+	\subsection*{8.1-4}
+	Optimal solution doesn't need to compare the elements in different subsequences. n/k sequences in total, $\Omega(k\lg(k))$ for each, so in total is $\Omega(n\lg(k))$
+\end{document}

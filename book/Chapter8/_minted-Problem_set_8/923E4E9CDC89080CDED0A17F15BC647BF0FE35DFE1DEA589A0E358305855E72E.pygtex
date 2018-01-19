@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{k}{def} \PYG{n+nf}{binary\PYGZus{}sort}\PYG{p}{(}\PYG{n}{A}\PYG{p}{):}
+		\PYG{n}{index} \PYG{o}{=} \PYG{l+m+mi}{0}
+		\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{n}\PYG{p}{):}
+			\PYG{k}{if} \PYG{n}{A}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{:}
+				\PYG{n}{swap}\PYG{p}{(}\PYG{n}{A}\PYG{p}{[}\PYG{n}{i}\PYG{p}{],} \PYG{n}{A}\PYG{p}{[}\PYG{n}{index}\PYG{p}{])}
+				\PYG{n}{index} \PYG{o}{+=} \PYG{l+m+mi}{1}
+\end{Verbatim}
